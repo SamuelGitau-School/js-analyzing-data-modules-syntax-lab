@@ -1,18 +1,20 @@
+require('datejs');
 
-function combineUsers(...args){
-  return args.flat
+function combineUsers(...args) {
 
-  let combinedObject= {
+  let combinedObject = {
     users: []
   };
 
-  for(let i=0;i<args.length;i++){
-    let currentArray = args[i]
+  for (let i = 0; i < args.length; i++) {
+    let currentUserArray = args[i];
+    
+
+    combinedObject.users.push(...currentUserArray);
   }
-  
-  combinedObject.users.push (...combineUsers)
-  combinedObject.merge_date( Date.today().toString('M/d/yyyy'))
-  
+
+  combinedObject.merge_date = Date.today().toString('M/d/yyyy');
+
   return combinedObject;
 }
 
